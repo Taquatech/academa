@@ -1,0 +1,41 @@
+<% @cportal/Reports/Exams/engine.php BroadSheetBasic %>
+<style>
+.bold{text-transform: uppercase;font-weight: bold;font-size:1.3em}
+.MT{margin-top:20px}.ML{margin-left:20px}.MR{margin-right:20px}.MB{margin-bottom:20px}.left{float: left;}.right{float:right}.clear{clear: both;}
+.align-right{text-align: right}
+.align-center{text-align: center}
+.ucase{text-transform: uppercase}.lcase{text-transform: lowercase}
+.fill-width{width: 100%}.half-width{width: 50%}
+.fill-width-20{width: calc(100% - 20px)}.half-width-20{width: calc(50% - 20px)}
+td{text-transform: uppercase}
+</style>
+<ep-section Header Title="{{Title}}"  >
+{{ResultInfo}}
+<div class="bold align-center">DEPARTMENT OF {{ProgName}} inner</div>
+<div class="bold align-center">{{LevelName}} {{SemName}} SEMESTER {{SesName}} SESSION</div>
+<div class="bold MT" style="width: 90%;margin-left:auto;margin-right:auto"><div class="half-width left">SUMMARY RESULT SEET</div><div class="align-right right half-width">PROGRAMME: {{StudyName}}</div><div class="clear"></div></div>
+{{ResultInfo}}
+</ep-section>
+
+<ep-section Footer Title="{{ResultInfo->LevelName}} {{ResultInfo->SemName}} SEMESTER {{ResultInfo->SesName}} SESSION" Signature="Exam Officer,HOD">
+
+</ep-section>
+
+<ep-section Failed>
+        <div style="color:red">{{Message}}</div>
+</ep-section>
+
+<ep-section Success>
+        <table>
+<thead>
+<tr><th>S/NO</th><th>NAMES OF STUDENT</th><th>REG. NO</th><th colspan="{{MaxTRC}}">RESULT </th><th>TCH</th><th>TGP</th><th>GPA</th><th>CCH</th><th>CGP</th><th>CGPA</th><th>REMARK</th></tr>
+</thead>
+<tbody>
+{{ResultDetail}}
+<tr><td>{{$}}</td><td class="ucase">{{SurName}} {{FirstName}} {{OtherNames}}</td><td>{{RegNo}}</td>{{Result}}<td>{{CourseCode}} ({{Total}}{{Grade}})</td>{{Result}}{{Padding}}<td>&nbsp;</td>{{Padding}}<td>{{TCH}}</td><td>{{TGP}}</td><td>{{GPA}}</td><td>{{CCH}}</td><td>{{CGP}}</td><td>{{CGPA}}</td><td>{{COP}}</td></tr>
+{{ResultDetail}}
+</tbody>
+        </table>
+</ep-section>
+
+

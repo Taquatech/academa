@@ -1,0 +1,24 @@
+
+//Version, ErrorRedirectURL, ControlMarkup, Core, Require and SubDir are compulsary
+var configdata = {
+    "Server":"",
+    "Version":"v5",
+    "ErrorRedirectURL":"../v5/epcore/error.php",
+    "ControlMarkup":"../v5/epcore/epapi/controls.html",
+    "aim-printer":{
+        "aim-printer-color":"appbgcolor",
+        "aim-printer-text-color":"appcolor",
+ "aim-printer-pdf-engine":"root://../LIB/PDF/mpdf7/vendor/autoload.php",
+ "aim-printer-paper-size":{
+     "A4":[210,297],
+     "Letter":[215.9,279.4],
+     "Legal":[215.9,355.6],
+     "A2":[420,594],
+     "A3":[297,420],
+     "Executive":[184.1,266.7]
+ }
+},
+"Core":"../v5/epcore/",
+"Require":"../LIB/",
+"SubDir":"academa/"
+}
