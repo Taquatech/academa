@@ -53,7 +53,7 @@ if($ip == $demo){
 									LogError(json_encode($_REQUEST),"Transaction Status = false 4");
 									}
 									$inst = MakePaidByRef($payeeID,$orderdet,["Amt"=>$amtord,"Bank"=>$bank,"Branch"=>$bankBranch,"DateTime"=>date('Y-m-d')]);
-									if($paid[0] == 1){
+									if($inst[0] == 1){
 										$_REQUEST['IP'] = $ip;
 									LogError(json_encode($_REQUEST),"Transaction Status = true");
 									
